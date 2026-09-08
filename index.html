@@ -32,7 +32,7 @@
     html {
     overflow-x: hidden;
     scroll-behavior: smooth;
-    scroll-padding-top: 90px;
+    scroll-padding-top: 6px;
 }
 
     body {
@@ -1379,13 +1379,13 @@
       .projects,
       .internships,
       .gallery,
-      .achievements {
-       padding: 4rem 1rem;
+      .achievements,
+      .contact {
+       padding: 5rem 1rem;
+       scroll-margin-top: 0;
 }
 
-.contact {
-    padding: 4rem 1rem;
-    min-height: 100vh;
+
 }
 
       .about-grid {
@@ -1469,6 +1469,29 @@
         gap: 0.75rem;
       }
     }
+    /* Fix mobile menu section position */
+@media (max-width: 768px) {
+
+  html {
+    scroll-padding-top: 20px;
+  }
+
+  .about,
+  .education,
+  .skills,
+  .projects,
+  .internships,
+  .gallery,
+  .achievements,
+  .contact {
+    scroll-margin-top: 0;
+  }
+
+  /* Contact ko proper top position par scroll hone ke liye */
+  .contact {
+    min-height: 100vh;
+  }
+}
   </style>
 </head>
 
@@ -2297,7 +2320,6 @@
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     });
-
     // Initialize
     renderProjects("all");
     type();
